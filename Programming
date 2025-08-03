@@ -1,1 +1,262 @@
+##WEEK 04
+
+# Example: Creating and accessing a dictionary
+person = {"name": "Alice", "age": 25}
+print(person["name"])  # Output: Alice
+
+# Looping through dictionary items
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# Exercise 1:
+# Create a dictionary representing a book with keys: 'title', 'author', 'year'.
+# Then print out each key and value in the dictionary.
+# Creating the book dictionary
+book = {
+    'title': 'To Kill a Mockingbird',
+    'author': 'Harper Lee',
+    'year': 1960
+}
+
+# Printing each key and value
+for key, value in book.items():
+    print(f"{key}: {value}")
+
+# Exercise 2: 
+# Create a dictionary that maps book titles to authors.
+# Then add a new book, update an existing one, and remove a book.
+books = {
+    "1984": "George Orwell",
+    "To Kill a Mockingbird": "Harper Lee",
+    "The Great Gatsby": "F. Scott Fitzgerald"
+}
+# Initial dictionary
+books = {
+    "1984": "George Orwell",
+    "To Kill a Mockingbird": "Harper Lee",
+    "The Great Gatsby": "F. Scott Fitzgerald"
+}
+
+# Add a new book
+books["Brave New World"] = "Aldous Huxley"
+
+# Update an existing book
+books["1984"] = "Orwell, George"  
+# Remove a book
+del books["The Great Gatsby"]
+
+# Print the final dictionary
+for title, author in books.items():
+    print(f"{title} by {author}")
+
+# TODO: Add the book "Pride and Prejudice" by "Jane Austen"
+# TODO: Update the author of "1984" to "Eric Arthur Blair"
+# TODO: Remove "The Great Gatsby" from the dictionary
+# Initial dictionary
+books = {
+    "1984": "George Orwell",
+    "To Kill a Mockingbird": "Harper Lee",
+    "The Great Gatsby": "F. Scott Fitzgerald"
+}
+
+# TODO: Add the book "Pride and Prejudice" by "Jane Austen"
+books["Pride and Prejudice"] = "Jane Austen"
+
+# TODO: Update the author of "1984" to "Eric Arthur Blair"
+books["1984"] = "Eric Arthur Blair"
+
+# TODO: Remove "The Great Gatsby" from the dictionary
+del books["The Great Gatsby"]
+
+# Print the final dictionary
+for title, author in books.items():
+    print(f"{title} by {author}")
+
+
+# Exercise 3: 
+# Use a dictionary to store a shopping cart where keys are item names
+# and values are quantities. Write code to add, update, and remove items from the cart.
+shopping_cart = {}
+
+# TODO: Add 'apple': 4, 'banana': 2, 'milk': 1
+# TODO: Update 'banana' to 5
+# TODO: Remove 'milk'
+# Initial empty shopping cart
+shopping_cart = {}
+
+shopping_cart = {}
+
+shopping_cart['apple'] = 4
+shopping_cart['banana'] = 2
+shopping_cart['milk'] = 1
+
+# TODO: Update 'banana' to 5
+shopping_cart['banana'] = 5
+
+# TODO: Remove 'milk'
+del shopping_cart['milk']
+
+# Print the final shopping cart
+for item, quantity in shopping_cart.items():
+    print(f"{item}: {quantity}")
+
+
+
+### Part 2: Using Comments ###
+
+# Single-line comment example
+# This is a comment explaining the next line of code
+greeting = "Hello, world!"
+
+"""
+Multi-line comment example:
+You can use triple quotes to comment out multiple lines of code or add documentation.
+"""
+
+# Exercise 4:
+# Write your own single-line and multi-line comments explaining a variable assignment.
+
+
+# Single-line comment: Define a variable for the user's name
+user_name = "Alice"
+
+# Single-line comment: Define a variable for user's age
+user_age = 30
+
+"""
+Multi-line comment:
+The following block of code checks if the user
+is old enough to access certain content.
+Age restriction is set at 18 years.
+"""
+
+if user_age >= 18:
+    print(user_name + " is allowed to access the content.")
+else:
+    print(user_name + " is NOT allowed to access the content.")
+
+### Part 3: Using Modules ###
+
+from math import sqrt
+
+print(sqrt(16))  # Output: 4.0
+
+# Exercise 5:
+# Import the math module and use the ceil function to round 4.3 up to the nearest integer.
+import math
+print(math.ceil(4.3))
+
+
+# Exercise 6: 
+# Import the random module and use it to simulate rolling a 6-sided die 10 times.
+# Store the result in a dictionary with the die face as key and count of rolls as value.
+
+# TODO: Import random
+# TODO: Roll die 10 times and count each face (1-6)
+# TODO: Store counts in a dictionary
+import random
+
+# TODO: Roll die 10 times and count each face (1-6)
+roll_counts = {}
+
+for _ in range(10):
+    roll = random.randint(1, 6)  # Roll a 6-sided die
+    # TODO: Store counts in a dictionary
+    if roll in roll_counts:
+        roll_counts[roll] += 1
+    else:
+        roll_counts[roll] = 1
+
+# Print the counts
+for face, count in roll_counts.items():
+    print(f"Face {face}: {count} times")
+
+### Part 4: String and List Methods ###
+
+# String methods
+print("banana".count("a"))  # Output: 3
+print("banana".replace("a", "o"))  # Output: bonono
+
+# List methods
+fruits = ["apple", "banana", "cherry"]
+print(fruits.index("banana"))  # Output: 1
+print(fruits.count("apple"))   # Output: 1
+
+# Exercise 7:
+# Given a string "hello world", count the number of 'l' characters.
+# Given a list [5, 3, 2, 5, 1, 5], count the number of times 5 appears.
+
+# Count 'l' in the string
+text = "hello world"
+count_l = text.count('l')
+print(f"Number of 'l' in '{text}': {count_l}")  # Output: 3
+
+# Count 5 in the list
+numbers = [5, 3, 2, 5, 1, 5]
+count_5 = numbers.count(5)
+print(f"Number of 5s in the list: {count_5}")  # Output: 3
+
+### Part 5: Functions and Parameters ###
+
+def double(x):
+    return x * 2
+
+value = 5
+print(double(value))  # Output: 10
+print(value)          # Output: 5 (unchanged)
+
+# Exercise 8:
+# Write a function called greet that takes a name as a parameter and returns "Hello, <name>!".
+def greet(name):
+    return "Hello, " + name + "!"
+
+print(greet("Alice"))
+
+# Exercise 9: Write a function that takes a dictionary of students and their marks,
+# and returns the name(s) of the top scoring student(s).
+
+def top_scorer(marks_dict):
+    # TODO: Implement the function to return a list of student(s) with the highest mark
+    pass
+
+students = {"Alice": 88, "Bob": 92, "Charlie": 92, "Diana": 85}
+
+
+# Expected output: ["Bob", "Charlie"]
+# Exercise 10: 
+# Write a function that takes a list of words and returns a dictionary
+# that maps each word to its length.
+
+def word_lengths(words):
+    # Create a dictionary mapping each word to its length
+    lengths = {}
+    for word in words:
+        lengths[word] = len(word)
+    return lengths
+
+sample_words = ["python", "dictionary", "loop", "function"]
+print(word_lengths(sample_words))
+
+
+# Output: {'python': 6, 'dictionary': 10, 'loop': 4, 'function': 8}
+
+### Part 6: Errors and Debugging ###
+
+# Syntax error example (uncomment to test)
+# print("Missing quote)
+
+# Type error example
+# print("5" + 1)  # Fix: use int("5") or str(1)
+
+# Value error example
+# int("3.5")  # Cannot convert float string directly to int
+
+# Exercise 11:
+# Fix the following code so it does not produce an error:
+# age = input("Enter your age: ")
+# print("Next year you will be " + age + 1)
+
+age = input("Enter your age: ")
+age_num = int(age)  # Converting string input to integer
+print("Next year you will be " + str(age_num + 1))
 
